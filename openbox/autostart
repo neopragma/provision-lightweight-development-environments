@@ -1,0 +1,4 @@
+xrandr --newmode "1680x1050_59.90"  146.89  1680 1784 1968 2256  1050 1051 1054 1087  -HSync +Vsync
+xrandr --addmode Virtual1 1680x1050_59.90
+xrandr --output Virtual1 --mode 1680x1050_59.90
+gnome-terminal --geometry=190x52+0+0 &

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Run bundle exec rake for a chef cookbook
+[[ -z "$1" ]] && COOKBOOK=ubuntu_prep || COOKBOOK="$1"
+pushd "/root/chef-repo/cookbooks/$COOKBOOK" 
+bundle exec rake
+popd

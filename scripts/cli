@@ -1,0 +1,4 @@
+#!/bin/bash
+# Exit from OpenBox without having to right-click. 
+# Run this in a terminal window.
+$(openbox --exit)

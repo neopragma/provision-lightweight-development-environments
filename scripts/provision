@@ -1,0 +1,5 @@
+#!/bin/bash
+# Execute chef for the ubuntu_prep cookbook (tailored to this environment)
+pushd /root/chef-repo/cookbooks
+chef-client --local-mode --override-runlist ubuntu_prep 
+popd

@@ -1,0 +1,14 @@
+#!/bin/bash
+# List the chef recipes available under a given cookbook 
+# $1 is the cookbook name
+
+[[ -z "$1" ]] && COOKBOOK=ubuntu_prep || COOKBOOK="$1"
+
+[[ ! -d "/root/chef-repo/cookbooks/$COOKBOOK" ]] && echo "Can't find a cookbook at /root/chef-repo/cookbooks/$COOKBOOK" && exit 1
+
+for f in `ls "/root/chef-repo/cookbooks/$COOKBOOK/recipes"` 
+do 
+  <"/root/chef-repo/cookbooks/$COOKBOOK/recipes/$f" read line
+  printf "$f: $line\n"
+done
+
