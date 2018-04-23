@@ -10,10 +10,10 @@ For most purposes, the instance will be usable as a 512 MB VM, and can be contai
 
 - [Create base (template) instances](base-general.md)
 - How to build a base instance for...
-- - [Linux: Debian 9 Jessie](base-debian-9.md)
-- - [Linux: Gentoo](base-gentoo-linux.md)
-- - [Linux: Ubuntu 16.04 LTS](base-ubuntu-16.04.md)
-- - [Linux: Raspberry Pi: Raspbian Jessie](base-raspbian-jessie.md)
+- - [Linux: Debian 9 Jessie](in-development.md)
+- - [Linux: Gentoo](in-development.md)
+- - [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
+- - [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
 - [Common configuration](common-configuration.md)
 - [NeoVim configuration](neovim-configuration.md)
 
