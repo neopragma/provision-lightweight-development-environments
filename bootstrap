@@ -17,35 +17,27 @@
 # 22 Apr 2018
 #--------------------------------------------------
 
-function install_package { 
-  printf "Checking package $1...\n"
-  if [ "$(dpkg -l | grep $1)" ]; then 
-    printf "already installed, skipping.\n"
-  else 
-    printf "not found, installing.\n"
-    apt install -y "$1" 
-  fi
-}
-
 [[ $EUID -ne 0 ]] && 'Please run the bootstrap script as root' && exit 1 
 
-apt update 
-apt dist-upgrade
-apt-add-repository ppa:brightbox/ruby-ng 
-apt update 
-install_package openssh-server
+apt update -y
+apt dist-upgrade -y
+# software-properties-common must be installed to make add-apt-repository available
+apt install -y software-properties-common
+add-apt-repository -y ppa:brightbox/ruby-ng 
+apt update -y
+apt install -y openssh-server
 
 printf "Enabling root login via ssh...\n" 
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp 
-sed -i 's/PermitRootLogin/PermitRootLogin yes/ /etc/ssh/sshd_config 
+sed -i '/PermitRootLogin/ c\PermitRootLogin yes' /etc/ssh/sshd_config 
 
-install_package build-essential 
-install_package linux-headers-`uname -r`
-install_package dkms
-install_package curl
-install_package ruby2.4 
-install_package ruby2.4-dev 
-install_package ruby-bundler 
+apt install -y build-essential \ 
+    linux-headers-`uname -r` \    
+    dkms \
+    ruby2.4 \ 
+    ruby2.4-dev \ 
+    ruby-bundler \ 
+    curl 
 
 printf "Installing Chef DK.\n" 
 curl https://omnitruck.chef.io/install.sh | bash -s -- -P chefdk -c stable -v 2.0.28
@@ -56,9 +48,9 @@ mkdir -p /root/chef-repo/cookbooks/ubuntu_prep/spec/unit
 mkdir -p /root/chef-repo/cookbooks/ubuntu_prep/recipes 
 cp ubuntu_prep/Gemfile /root/chef-repo/cookbooks/ubuntu_prep/. 
 cp ubuntu_prep/Rakefile /root/chef-repo/cookbooks/ubuntu_prep/.
-cp -r recipes/* /root/chef-repo/cookbooks/ubuntu_prep/recipes
+cp -r ubuntu_prep/recipes/* /root/chef-repo/cookbooks/ubuntu_prep/recipes
 cp spec/spec_helper.rb /root/chef-repo/cookbooks/ubuntu_prep/spec/spec_helper.rb 
-cp -r spec/unit/recipes/* /root/chef-repo/cookbooks/ubuntu_prep/spec/unit/recipes 
+cp -r ubuntu_prep/spec/unit/recipes/* /root/chef-repo/cookbooks/ubuntu_prep/spec/unit/recipes 
 
 printf "Executing Chef to complete provisioning the instance.\n"
 cd /root/chef-repo/cookbooks 

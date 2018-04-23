@@ -18,14 +18,19 @@ Download iso from <a href="https://www.ubuntu.com/download/server">https://www.u
 
 Install Ubuntu Server as a VM (any [hypervisor](hypervisor.md)). 
 
-When prompted:
+### 1.3. Set a root password 
 
-- Username: dev 
-- Password: developer 
+Ubuntu distros are intentionally configured with no root password as a way to encourage us to avoid logging in directly as root. To enable root login, create a root password as follows.
 
-When prompted:
+```shell 
+sudo passwd  
+``` 
 
-- Root password: admin
+When prompted, enter the dev password, 'developer'. 
+
+When prompted for a new root password, enter 'admin'.
+
+When prompted, re-type the root password.
 
 ## 2. Provision the instance as a "base" for development environments.
 
@@ -102,16 +107,81 @@ bootstrap-ubuntu-server-16.04-base/
 If all goes well, this will provision the instance as a base or template for building development environments. Check the results carefully in case of errors. There are many steps and anything can happen despite care in preparing the script. 
 
 ```shell 
-cd 
+cd /root/bootstrap-ubuntu-server-16.04-dev-base
 ./bootstrap
 ``` 
 
-### 3. Finish configuring NeoVim.
+### 3. Manual configuration of NeoVim.
+
+Some steps can't be scripted. 
+
+#### 3.1. Install python support for NeoVim plugins.
+
+There are issues on Ubuntu distros with pip2. Might require some fiddling.
+
+```shell 
+pip2 install --user neovim 
+pip3 install --user neovim 
+```
+
+#### 3.2. Enable plugins 
+
+One-time run of :UpdateRemotePlugins for certain plugins.
 
 - Start neovim 
 - Run the editor command :UpdateRemotePlugins
 - Quit neovim
 
-### 4. Known issues.
+#### 3.3. Set NeoVim as the default editor 
 
-- Odd behavior on startx/xinit for non-root user; error messages appear but everything works anyway. Impact is 20 second delay before first terminal window is usable. Observed on Ubuntu Server 16.04 builds.
+The install_neovim Chef recipe installs NeoVim into the alternatives system, but you may have to make it the default selection manually:
+
+```shell 
+update-alternatives --config editor 
+``` 
+
+Choose the number corresponding to NeoVim and press Enter.
+
+
+### 4. Known issues with the bootstrap process
+
+#### 4.1. Please use apt-cdrom
+
+You may get the error "Please use apt-cdrom to make this CD-ROM recognized by APT, apt-get update cannot be used to add new CD-ROMs".
+
+Find out which lines in the sources list refer to CD-ROMs:
+
+```shell 
+cat /etc/apt/sources.list | grep cdrom
+``` 
+
+Comment those lines out of the sources list and re-run the script.
+
+#### 4.2 update-alternatives reports broken link group
+
+If the bootstrap script partially completes and you re-run it, you might see the following warnings:
+
+```
+update-alternatives: warning: forcing reinstallation of alternative /usr/bin/gem2.4 because link group gem is broken
+
+update-alternatives: warning: forcing reinstallation of alternative /usr/bin/ruby2.4 because link group ruby is broken
+```
+
+This will not affect the installation and no corrective action is needed.
+
+#### 4.3. dpkg status database is locked by another process
+
+If you interrupt the bootstrap script while an `apt install` is in progress, the dpkg status lock file may not be deleted. When that happens you will get this message on re-running the script. 
+
+Delete the lock file and reconfigure dpkg:
+
+```shell 
+rm /var/lib/dpkg/lock 
+dpkg --configure -a 
+```
+
+### 5. Known issues after system comes up
+
+#### 5.1. Errors from xinit/startx for non-root user
+
+Odd behavior on startx/xinit for non-root user; error messages appear but everything works anyway. Impact is 20 second delay before first terminal window is usable. Observed on Ubuntu Server 16.04 builds.
