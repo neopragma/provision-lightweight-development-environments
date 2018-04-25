@@ -4,6 +4,11 @@
 
 The following NeoVim plugins and configuration settings are included in the base build. (Language-specific customization may add more, and you can change whatever you wish.) 
 
+### Additional key bindings (besides defaults) 
+
+- **,f** - toggles a file browser 
+- **,o** - opens a terminal pane at the bottom of the current editor pane (to close, type ```exit``` and press Enter while focus is in the terminal pane).
+
 ### Settings 
 
 - Editor shows line numbers

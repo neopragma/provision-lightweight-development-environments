@@ -21,3 +21,19 @@ For all operating systems, the base build includes the following:
 OpenBox configuration is as it comes, with the addition of a key binding to start a terminal emulator:
 
 - Ctrl+t
+
+## Aliases and symlinks 
+
+In an attempt to keep all these environments generally consistent, the following are defined either as aliases or symlinks on each:
+
+- **cli** - issued when using a terminal emulator in an X session, this closes OpenBox and returns you to the command line.
+- **gui** - issued when working on the command line, this starts an X session and opens an instance of the terminal emulator. 
+- **cook** - runs chef-client to re-run one or more recipes from the provisioning cookbook, in case you need to do that.
+- **provision** - runs chef-client to re-run the entire provisioning script, in case you need to do that.
+- **runchefspec** - runs the Chef unit checks (rspec specs), in case you need to do that.
+
+## Notes 
+
+[1] For Debian and derivatives, ```lxterminal``` is installed. For CentOS/Fedora and derivatives, ```rxvt-unicode-256color``` is installed (```urxvt256c```). 
+
+[2] For CentOS, the user name ```dev``` is reserved. The bootstrap script creates user ```developer``` instead. 
