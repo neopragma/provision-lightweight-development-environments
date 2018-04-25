@@ -10,6 +10,7 @@ For most purposes, the instance will be usable as a 512 MB VM, and can be contai
 
 - [Create base (template) instances](base-general.md)
 - How to build a base instance for...
+- - [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
 - - [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
 - - [Linux: Gentoo](in-development.md)
 - - [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
