@@ -4,13 +4,13 @@
 
 For all operating systems, the base build includes the following:
 
-- user account 'dev' with password 'developer', sudo-enabled if applicable
+- user account 'dev'[1] with password 'developer', sudo-enabled if applicable
 - user account 'root' with password 'admin'
 - Ethernet and wireless networking support 
 - ssh server configured to enable remote login as root (with password)
 - X windows client and server
 - a basic window manager (OpenBox if available, else Fluxbox if available, else whatever is available for the target platform)
-- a terminal emulator (depends on platform)
+- a terminal emulator (depends on platform)[2]
 - Chef Client (used in the provisioning process)
 - git command line client 
 - Bash 4, Ruby 2.4, Python, Python3, GNU C/C++
@@ -34,6 +34,6 @@ In an attempt to keep all these environments generally consistent, the following
 
 ## Notes 
 
-[1] For Debian and derivatives, ```lxterminal``` is installed. For CentOS/Fedora and derivatives, ```rxvt-unicode-256color``` is installed (```urxvt256c```). 
+[1] For CentOS, the user name ```dev``` is reserved. The bootstrap script creates user ```developer``` instead. 
 
-[2] For CentOS, the user name ```dev``` is reserved. The bootstrap script creates user ```developer``` instead. 
+[2] For Debian and derivatives, ```lxterminal``` is installed. For CentOS/Fedora and derivatives, ```rxvt-unicode-256color``` is installed (```urxvt256c```). 
