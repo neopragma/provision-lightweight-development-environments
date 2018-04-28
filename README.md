@@ -20,7 +20,7 @@ The concept is you will rely on command-line build tools and shell scripts to de
 
 ## Choosing a distro
 
-We have a large number of choices when it comes to Linux and Unix distributions. They cover a spectrum from do-it-yourself-from-source to copy-the-appliance-and-go. It's more-or-less like this:
+We have a large number of choices when it comes to Linux and Unix distributions. They cover a spectrum from do-it-yourself-from-source to copy-the-appliance-and-go. The range of choices runs more-or-less like this:
 
 - build from source (see [kernel.org](https://www.kernel.org), [linuxfromscratch.org](http://www.linuxfromscratch.org))
 - follow a guided config/build process based on a partial build (see [Gentoo](https://gentoo.org), [Arch](https://www.archlinux.org), others)
@@ -28,7 +28,7 @@ We have a large number of choices when it comes to Linux and Unix distributions.
 - install a ready-to-run iso with no desktop and add packages to it (see [Debian, deselect desktop options on install](https://www.debian.org), [Ubuntu Server](https://www.ubuntu.com/download/server), others)
 - install a consumer-friendly desktop distro and remove packages from it (see [Manjaro](https://manjaro.org), [Mint](https://linuxmint.com), others)
 
-The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. 
+The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. We want to get up and running quickly; this isn't the time for chasing down build errors or experimenting with kernel configuration options. 
 
 My experience with attempting to set this up various ways leads me to recommend starting with _a ready-to-run iso with no desktop and add packages to it_. 
 
