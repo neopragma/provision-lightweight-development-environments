@@ -1,0 +1,46 @@
+about 9300 lines down in the log
+
+fs/jffs2/xattr.c: In function jffs2_build_xattr_subsystem:
+fs/jffs2/xattr.c:887:1: warning: the frame size of 1120 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+}
+
+about 12200 lines down in the log 
+
+net/openvswitch/datapath.c: In function ovs_flow_cmd_set:
+net/openvswitch/databath.c:1225:1: warning: the frame size of 1056 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+}
+
+about 12800 lines down in the log
+
+drivers/net/ethernet/neterion/vxge/vxge-main.c: In function vxge_poll_inta:
+drivers/net/ethernet/neterion/vxge/vxge-main.c:1873:1: warning: warning: the frame size of 1056 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+}
+
+drivers/net/ethernet/neterion/vxge/vxge-main.c: In function vxge_poll_inta:
+drivers/net/ethernet/neterion/vxge/vxge-main.c:2246:1: warning: warning: the frame size of 1040 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+}
+
+drivers/net/ethernet/neterion/vxge/vxge-main.c: In function vxge_poll_inta:
+drivers/net/ethernet/neterion/vxge/vxge-main.c:1908:1: warning: warning: the frame size of 1048 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+}
+
+about 13900 lines down in the log
+
+Building modules, stage 2
+MODPOST 1683 modules
+ERROR: "pnfs_unregister_layoutdrier" [fs/nfs/objlayout/objlayoutdriver.ko] undefined!
+plus hundreds like that
+
+make: *** [Makefile:1216: modules] Error 2
+* Gentoo Linux Genkernel; Version 3.4.52.4
+* Running with options: all
+* Using genkernel.conf from /etc/genkernel.conf
+* Sourcing arch-specific config.sh from /usr/share/genkernel/arch/x86_64/config.sh
+* Sourcing arch-specific modules_load from /usr/share/genkernel/arch/x86_64/modules_load
+
+* ERROR: Failed to compile the "modules" target...
+
+* -- Grepping log... --
+
+* -- End log... --
+
