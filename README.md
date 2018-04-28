@@ -22,11 +22,11 @@ The concept is you will rely on command-line build tools and shell scripts to de
 
 We have a large number of choices when it comes to Linux and Unix distributions. They cover a spectrum from do-it-yourself-from-source to copy-the-appliance-and-go. The range of choices runs more-or-less like this:
 
-- build from source (see [kernel.org](https://www.kernel.org), [linuxfromscratch.org](http://www.linuxfromscratch.org))
-- follow a guided config/build process based on a partial build (see [Gentoo](https://gentoo.org), [Arch](https://www.archlinux.org), others)
-- install a "minimal" distro and add packages to it (see [Bodhi](http://www.bodhilinux.com/download/), [Core](http://distro.ibiblio.org/tinycorelinux/downloads.html), others)
-- install a ready-to-run iso with no desktop and add packages to it (see [Debian, deselect desktop options on install](https://www.debian.org), [Ubuntu Server](https://www.ubuntu.com/download/server), others)
-- install a consumer-friendly desktop distro and remove packages from it (see [Manjaro](https://manjaro.org), [Mint](https://linuxmint.com), others)
+- [1] build from source (see [kernel.org](https://www.kernel.org), [linuxfromscratch.org](http://www.linuxfromscratch.org))
+- [2] follow a guided config/build process based on a partial build (see [Gentoo](https://gentoo.org), [Arch](https://www.archlinux.org), others)
+- [3] install a "minimal" distro and add packages to it (see [Bodhi](http://www.bodhilinux.com/download/), [Core](http://distro.ibiblio.org/tinycorelinux/downloads.html), others)
+- [4] install a ready-to-run iso with no desktop and add packages to it (see [Debian w/o desktop](https://www.debian.org), [Ubuntu Server](https://www.ubuntu.com/download/server), others)
+- [5] install a consumer-friendly desktop distro and remove packages from it (see [Manjaro](https://manjaro.org), [Mint](https://linuxmint.com), others)
 
 The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. We want to get up and running quickly; this isn't the time for chasing down build errors or experimenting with kernel configuration options. 
 
@@ -34,10 +34,10 @@ My experience with attempting to set this up various ways leads me to recommend 
 
 ## How to build a base instance from...
 
-- [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
-- [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
-- [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
-- [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
+- [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
+- [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
+- [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
+- [5] [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
 
 ## Notes
 
@@ -49,10 +49,4 @@ My experience with attempting to set this up various ways leads me to recommend 
 
 [Information about hardware and hypervisors](references.md)
 
-## Failures 
 
-I was not able to make this work with all the distros I tried. FWIW, here are the failure stories. 
-
-- [Arch Linux](failures/archlinux-fail.md)
-- [Gentoo Linux](failures/gentoo-fail.md)
-- [Redcore Linux](failures/redcore-fail.md)
