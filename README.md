@@ -18,6 +18,20 @@ In reality, you will probably need a GUI environment for _something_, even if on
 
 The concept is you will rely on command-line build tools and shell scripts to deal with project metadata, dependencies, compilation, test execution, and so forth rather than depending on IDE features; tools like make, npm, rake, maven, gradle, sbt, dotnet, ghci, etc. This keeps the setup simple while enabling you to work with a wide variety of languages through a single text editor. You can add graphical tools as needed, such as Web browsers or testing tools like SoapUI or Postman.
 
+## Choosing a distro
+
+We have a large number of choices when it comes to Linux and Unix distributions. They cover a spectrum from do-it-yourself-from-source to copy-the-appliance-and-go. It's more-or-less like this:
+
+- build from source (see [kernel.org](https://www.kernel.org), [linuxfromscratch.org](http://www.linuxfromscratch.org))
+- follow a guided config/build process based on a partial build (see [Gentoo](https://gentoo.org), [Arch](https://www.archlinux.org), others)
+- install a "minimal" distro and add packages to it (see [Bodhi](http://www.bodhilinux.com/download/), [Core](http://distro.ibiblio.org/tinycorelinux/downloads.html), others)
+- install a ready-to-run iso with no desktop and add packages to it (see [Debian, deselect desktop options on install](https://www.debian.org), [Ubuntu Server](https://www.ubuntu.com/download/server), others)
+- install a consumer-friendly desktop distro and remove packages from it (see [Manjaro](https://manjaro.org), [Mint](https://linuxmint.com), others)
+
+The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. 
+
+My experience with attempting to set this up various ways leads me to recommend starting with _a ready-to-run iso with no desktop and add packages to it_. 
+
 ## How to build a base instance from...
 
 - [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
