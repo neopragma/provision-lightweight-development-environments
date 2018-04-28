@@ -10,6 +10,12 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 For most purposes, the instance will be usable as a 512 MB VM, and can be containerized or loaded onto a small computer such as a Raspberry Pi. The instance can run with any [hypervisor](hypervisor.md).
 
+This came about when I asked myself whether we really "need" a hefty system loaded to the gills with various IDEs. Taking stock of the laptop I was working with at the time, I noted 25 IDEs were installed. There were mainstream ones like IntelliJ IDEA and VSCode, and also a number of specialized ones such as Arduino Studio and Eiffel Studio. 
+
+What would the _opposite_ sort of development environment look like, and how would the work flow _feel_ in comparison to today's typical IDE-dependent work flow? 
+
+If that seemed practical, then what would it take to enable a painless, quick, "no-brainer" sort of setup procedure to spin up such an environment and tailor it to different development needs?
+
 ## Command-line and keyboard orientation
 
 In principle, you don't need a graphical environment at all to use this setup. You have six ttys so you can have up to six command lines open at a time, and the NeoVim editor feels very much like a full-screen graphical editor. It can open a terminal panel and you can also enter individual commands from within the editor. 
