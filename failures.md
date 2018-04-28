@@ -15,6 +15,7 @@ Experiences like these squeezed the spectrum of available installation options i
 - [Arch Linux](failures/archlinux-fail.md)
 - [Argent Linux](failures/argent-fail.md)
 - [CoreOS Container Linux](failures/coreos-fail.md)
+- [exGENT Linux](failures/exgent-fail.md)
 - [Gentoo Linux](failures/gentoo-fail.md)
 - [Redcore Linux](failures/redcore-fail.md)
 - [Sabayon Linux](failures/sabayon-fail.md)
