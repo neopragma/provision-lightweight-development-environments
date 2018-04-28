@@ -22,7 +22,6 @@ The concept is you will rely on command-line build tools and shell scripts to de
 
 - [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
 - [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
-- [Linux: Gentoo](in-development.md)
 - [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
 - [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
 
@@ -36,3 +35,9 @@ The concept is you will rely on command-line build tools and shell scripts to de
 
 [Information about hardware and hypervisors](references.md)
 
+## Failures 
+
+I was not able to make this work with all the distros I tried. FWIW, here are the failure stories. 
+
+- [Arch Linux](failures/archlinux-fail.md)
+- [Gentoo Linux](failures/gentoo-fail.md)
