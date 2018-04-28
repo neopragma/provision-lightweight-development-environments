@@ -1,7 +1,5 @@
 # Gentoo Linux: FAIL
 
-For general information about this repo and related ones, please see [Provision Lightweight Development Environments](http://github.com/neopragma/provision-lightweight-development-environments).
-
 ## tl;dr - Gentoo did not work
 
 I understand Gentoo is primarily for people who want to customize and build their own Linux system, but I believe that if an organization offers the option to run a "standard" out-of-the-box build, then they assume the responsibility to make sure that build works. 
