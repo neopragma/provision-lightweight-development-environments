@@ -55,3 +55,4 @@ I was not able to make this work with all the distros I tried. FWIW, here are th
 
 - [Arch Linux](failures/archlinux-fail.md)
 - [Gentoo Linux](failures/gentoo-fail.md)
+- [Redcore Linux](failures/redcore-fail.md)
