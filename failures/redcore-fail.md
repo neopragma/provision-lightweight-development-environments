@@ -1,3 +1,5 @@
+[top](../README.md) =&gt; [Failures](failures.md)
+
 # Redcore Linux: FAIL
 
 Redcore is a relatively new player from Romania. They offer a good selection of applications on a user-friendly platform based on Gentoo Linux. The distro _looks_ very promising, and in a video review by [Derek Taylor](https://www.youtube.com/watch?v=Qya9atmGcoc) it actually appears to _work_. He walks through several of the programs that come bundled with Redcore, and it looks like a well-chosen selection of tools for practical desktop environment. It also seems to have a nice visual design.

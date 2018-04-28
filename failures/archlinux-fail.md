@@ -1,3 +1,5 @@
+[top](../README.md) =&gt; [Failures](failures.md)
+
 ## Arch Linux - FAIL
 
 The Arch Linux installation guide is more a test of character than an actual installation guide. As for me: My worthiness has not been established.

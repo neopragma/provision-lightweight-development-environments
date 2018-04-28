@@ -30,7 +30,7 @@ We have a large number of choices when it comes to Linux and Unix distributions.
 
 The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. We want to get up and running quickly; this isn't the time for chasing down build errors or experimenting with kernel configuration options. 
 
-My experience with attempting to set this up various ways leads me to recommend starting with _a ready-to-run iso with no desktop and add packages to it_. 
+My experience with attempting to set this up various ways leads me to recommend starting with _a ready-to-run iso with no desktop and add packages to it_. Here are some [more details](failures.md) about distros that did not fit the need. 
 
 ## How to build a base instance from...
 
@@ -48,5 +48,6 @@ My experience with attempting to set this up various ways leads me to recommend 
 ## References
 
 [Information about hardware and hypervisors](references.md)
+
 
 

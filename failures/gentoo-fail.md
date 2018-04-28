@@ -1,3 +1,5 @@
+[top](../README.md) =&gt; [Failures](failures.md)
+
 # Gentoo Linux: FAIL
 
 ## tl;dr - Gentoo did not work
