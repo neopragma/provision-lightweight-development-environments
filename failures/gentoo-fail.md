@@ -1,4 +1,4 @@
-# Gentoo Linux: Build Base for Lightweight Development Environments
+# Gentoo Linux: FAIL
 
 For general information about this repo and related ones, please see [Provision Lightweight Development Environments](http://github.com/neopragma/provision-lightweight-development-environments).
 
