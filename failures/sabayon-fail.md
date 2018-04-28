@@ -6,6 +6,8 @@
 
 After installation, every command fails with "invalid ELF header". The system thinks many, many .so files have the wrong magic number. I don't know if the .so files are really corrupted, or if something in Sabayon incorrectly "thinks" they are corrupted. In any case, it is not possible to run the package manager at all, and there is no documentation about this behavior on the Sabayon wiki, forum, or FAQ, so I did not find any way to fix the problem. 
 
+Some programs will run, including the ```nano``` editor, so it seems in principle there could be a way to fix the system, even if it involves some tedious editing of obscure files. However, the C compiler will not run, which means there would be no way to rebuild anything even if one could discover what to change. ```gcc``` gets "Could not get portage CHOST!" errors.
+
 Done.
 
 The long story (which isn't so long, as the problem occurs very early on):
