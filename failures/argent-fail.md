@@ -1,4 +1,4 @@
-[top](../README.md) =&gt; [Failures](failures.md)
+[top](../../README.md) =&gt; [Failures](../failures.md)
 
 # Argent Linux: FAIL
 
