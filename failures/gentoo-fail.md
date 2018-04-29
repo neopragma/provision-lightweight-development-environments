@@ -4,13 +4,9 @@
 
 ## tl;dr - Gentoo did not work
 
-I understand Gentoo is primarily for people who want to customize and build their own Linux system, but I believe that if an organization offers the option to run a "standard" out-of-the-box build, then they assume the responsibility to make sure that build works. 
+The longer version of my attempt to build Gentoo follows. Reading through it a couple of days later, it occurred to me I dropped the ball at the point of initializing initramfs. My fault. 
 
-Gentoo offers that, according to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel) (see "Alternative: Using genkernel" near the end of the page).
-
-If the user were willing to take on the challenge of build errors, they would have chosen the do-it-yourself option. Unacceptable.
-
-The longer version follows.
+Even so, for the purpose at hand a two-day build process isn't a suitable option. I intend to try Gentoo again at some future time when I'm interested in working through the build step by step.
 
 ## 1. Install Gentoo Linux
 
