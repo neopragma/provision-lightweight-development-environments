@@ -8,6 +8,29 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 ![illustration of the idea](images/environments.png)
 
+## How to build a base instance from...
+
+- [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
+- [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
+- [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
+- [5] [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
+
+## Notes
+
+- [Common configuration](common-configuration.md)
+- [NeoVim configuration](neovim-configuration.md)
+- [Watch progress of bootstrap script](watch-bootstrap.md)
+
+## Roads not taken
+
+Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com"> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
+
+## References
+
+[Information about hardware and hypervisors](references.md)
+
+## Background
+
 For most purposes, the instance will be usable as a 512 MB VM, and can be containerized or loaded onto a small computer such as a Raspberry Pi. The instance can run with any [hypervisor](hypervisor.md).
 
 This came about when I asked myself whether we really "need" a hefty system loaded to the gills with various IDEs. Taking stock of the laptop I was working with at the time, I noted 25 IDEs were installed. There were mainstream ones like IntelliJ IDEA and VSCode, and also a number of specialized ones such as Arduino Studio and Eiffel Studio. 
@@ -40,22 +63,6 @@ My experience with attempting to set this up various ways leads me to recommend 
 
 I tried several Linux distros and had mixed results. Some "failure stories" are documented here: [Failures](failures.md). For guidance in using the distros that _did_ work, please follow the links below. 
 
-## How to build a base instance from...
-
-- [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
-- [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
-- [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
-- [5] [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
-
-## Notes
-
-- [Common configuration](common-configuration.md)
-- [NeoVim configuration](neovim-configuration.md)
-- [Watch progress of bootstrap script](watch-bootstrap.md)
-
-## References
-
-[Information about hardware and hypervisors](references.md)
 
 
 
