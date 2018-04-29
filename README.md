@@ -21,10 +21,6 @@ A _base_ instance provides a template for provisioning environments tailored for
 - [NeoVim configuration](neovim-configuration.md)
 - [Watch progress of bootstrap script](watch-bootstrap.md)
 
-## Roads not taken
-
-Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com">Bodhi Linux</a> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
-
 ## References
 
 [Information about hardware and hypervisors](references.md)
@@ -61,7 +57,12 @@ The use case here is to set up a low-footprint OS instance suitable for software
 
 My experience with attempting to set this up various ways leads me to recommend starting with category [4]: _a ready-to-run iso with no desktop and add packages to it_. 
 
-I tried several Linux distros and had mixed results. Some "failure stories" are documented here: [Failures](failures.md). For guidance in using the distros that _did_ work, please follow the links below. 
+I tried several Linux distros and had mixed results. Some "failure stories" are documented here: [Failures](failures.md). 
+
+## Roads not taken
+
+Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com">Bodhi Linux</a> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
+
 
 
 
