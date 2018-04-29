@@ -23,7 +23,7 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 ## Roads not taken
 
-Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com"> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
+Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com">Bodhi Linux</a> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
 
 ## References
 
