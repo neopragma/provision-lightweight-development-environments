@@ -10,10 +10,15 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 ## How to build a base instance from...
 
-- [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base)
-- [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base)
-- [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base)
-- [5] [Linux: Raspberry Pi: Raspbian Jessie](in-development.md)
+- [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base) - Fedora base
+- [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base) - Debian base
+- [4] Mabox (TBD) - Arch base 
+- [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu base
+- [5] Linux: Raspberry Pi: Raspbian Jessie (TBD)
+
+## Why the different options?
+
+Individuals have preferences regarding the underlying operating system, even if the command line, common system commands, general behavior of Unix/Linux systems, functionality of Vim and NeoVim, and available packages are all essentially the same. It may be that you are accustomed to a certain package manager or directory structure conventions or whatever, and you want your lightweight development environment to be consistent with your other systems. With that in mind, I tried to find practical ways to stand up a usable lightweight environment using a variety of distros as starting points. 
 
 ## Notes
 
@@ -49,8 +54,8 @@ We have a large number of choices when it comes to Linux and Unix distributions.
 
 - [1] build from source (see [kernel.org](https://www.kernel.org), [linuxfromscratch.org](http://www.linuxfromscratch.org))
 - [2] follow a guided config/build process based on a partial build (see [Gentoo](https://gentoo.org), [Arch](https://www.archlinux.org), others)
-- [3] install a "minimal" distro and add packages to it (see [Bodhi](http://www.bodhilinux.com/download/), [Core](http://distro.ibiblio.org/tinycorelinux/downloads.html), others)
-- [4] install a ready-to-run iso with no desktop and add packages to it (see [Debian w/o desktop](https://www.debian.org), [Ubuntu Server](https://www.ubuntu.com/download/server), others)
+- [3] install a "minimal" distro and add packages to it (see [Ubuntu Server](https://www.ubuntu.com/download/server), [Core](http://distro.ibiblio.org/tinycorelinux/downloads.html), others)
+- [4] install a ready-to-run iso with no (or a minimal) desktop and add packages to it (see [Debian w/o desktop](https://www.debian.org), [Mabox](https://maboxlinux.org), others)
 - [5] install a consumer-friendly desktop distro and remove packages from it (see [Manjaro](https://manjaro.org), [Mint](https://linuxmint.com), others)
 
 The use case here is to set up a low-footprint OS instance suitable for software development. We aren't looking for a way to explore the internals of Linux. Conversely, we aren't looking for a slick desktop environment with lots of bells and whistles. We want to get up and running quickly; this isn't the time for chasing down build errors or experimenting with kernel configuration options. 
@@ -61,7 +66,9 @@ I tried several Linux distros and had mixed results. Some "failure stories" are 
 
 ## Roads not taken
 
-Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com">Bodhi Linux</a> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do.
+Some distros that are designed for end-user convenience were not included in this exercise. This is not a reflection on their quality. It only means they didn't seem to be a fit for the immediate use case. For example, <a href="https://www.bodhilinux.com">Bodhi Linux</a> is a nice packaging of Ubuntu that makes it a little easier for most people to get a working desktop environment up and running. That makes it a category [5] distro according to the taxonomy described above. For our purposes, that would mean removing all the niceties that have been built into the distro, to strip it down into a minimal environment. That just doesn't seem like a very logical thing to do. Besides, we already have an option for an Ubuntu-based configuration by starting with Ubuntu Server. 
+
+There are some category [5] distros that seem reasonable as starting points, as there isn't as much to remove. For example, <a href="https://manjaro.org">Manjaro</a> offers several options including an XFCE desktop edition. That's a fairly lightweight environment already, and it doesn't feel as if we're destroying a lot of add-on work when we strip it down. 
 
 
 
