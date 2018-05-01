@@ -12,6 +12,7 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 - [4] [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base) - Fedora base
 - [4] [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base) - Debian base
+- [5] [Linux: Manjaro](http://github.com/neopragma/bootstrap-manjaro-dev-base) - Arch base
 - [4] [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu base
 - [5] Linux: Raspberry Pi: Raspbian Jessie (TBD)
 
