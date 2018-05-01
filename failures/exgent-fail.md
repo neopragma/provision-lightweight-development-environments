@@ -1,104 +1,195 @@
 [top](../../README.md) =&gt; [Failures](../failures.md)
 
-## exGENT Gentoo: First attempt: FAIL
+## exGENT Gentoo: FAIL
 
-I'm not sure how mature this distro is, as the website shows only 6 reviews and 84 total downloads. The wiki is empty, as if they used a site generator to produce the site and it provided a skeleton wiki section. I was unable to find any documentation. 
+I struggled for a couple of days on my own based on the available documentation, and was stumped. After an email exchange with Arne Exton, creator of exGENT, I wanted to try one more time to install the system to disk. After about 6 hours stuck at Step 5 (below), I called it "done." This documents the experience for future reference.
 
-I tried bringing up the iso with VMware Fusion. It presented several boot options, but there is no explanation of what they mean. I chose the first one in the list. It brought up a login screen with a sports car background image. There was no indication of what login credentials to use.
+Useful links:
 
-I tried ```root``` with password ```root```. Initially, I thought it would be impossible to try to login, as the Tab key is not recognized. I hit Enter, thinking it would present an error message with a retry option, but instead it moved the cursor to the password field. Okay. The Principle of Least Astonishment comes to mind, for some reason. 
+- [Release announcement](http://exgent.exton.net)
+- [Download live iso](https://sourceforge.net/projects/exgent/)
+- [Installation guide](http://exgent.exton.net/?page_id=25)
 
-This took me into the LXQt graphical desktop environment.
+The following is based in part on information in the installation guide and in part on information from Arne's email in response to my request for help. 
 
-It looked like a normal desktop system, but what is one expected to do at this point? Is there an installation procedure, or is this intended to be usable as-is?
+## Download iso
 
-I explored the UI and found that programs listed in the menu started normally. I changed the monitor resolution and put myself in a bind; the screen didn't fit my monitor and I couldn't reach the panel at the bottom of the display. I tried "restart" from VMware to see if the system would remember the new resolution or revert to the original.
+Download the live iso from [Sourceforge](https://sourceforge.net/projects/exgent/)
 
-At first it said "Boot failed, press any key to retry." Fortunately, the retry worked. The monitor resolution had reverted to the default. So, this was not an installer, but a live system. 
+## Start the iso in VMware
 
-I restarted again so I could try another boot option. I tried "Boot from first hard disk," and got "Failed to load COM32 file chain.c32". After a timeout period, it rebooted to the initial boot menu.
+VMware Fusion (OS X) settings:
 
-Couldn't think of much else to try at that point. I booted into the live environment and saved a file, then restarted again to see if the file was still there. I opened a terminal and ran
+- Linux =&gt; Other Linux 3.x or later kernel 64-bit
+- Customize settings
+- Processors &amp; Memory:
+  - 1 processor core
+  - 1024 MB memory
+- Hard Disk (SCSI):
+  - 20 GB
+
+Start Up.
+
+From the boot menu, choose ```exGENT x86_64```
+
+**Note:** The boot process does not start correctly by default after the menu times out. If the menu times out, you will see the message: ```Boot failed: press a key to retry...``` In that case, press a key (I used ```Enter```) to return to the boot menu. This time, don't sit there reading the menu, press ```Enter``` immediately to start the boot process. 
+
+The system boots to a login form. Log in as user 'root' with password 'root'. This will take you to an LXQt desktop environment. 
+
+This is a fully-functional but non-persistent instance. If you wish, you can explore the environment and run programs. However, any work you save will be lost when you shut down the instance. In this state, the system is only a toy or demo environment.
+
+## Install to disk
+
+#### 1. Check your hard disk device
+
+If you're working with VMware Fusion, you have a 20 GB drive at ```/dev/sda```. Verify this, or discover what you actually have in your case:
 
 ```shell
-echo 'Here is some text.' > testfile.txt
+fdisk -l
+``` 
+
+In my case, I saw the virtual disk VMware Fusion created: 
+
 ```
+Disk /dev/sda: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes 
+Sector size (logical/physical): 512 bytes / 512 bytes 
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+``` 
 
-Then I restarted via VMware. The file ```testfile.txt``` was not there. Unsurprising in view of the earlier monitor resolution change.
+If you see something similar to that, then you are where you should be at this stage. 
 
-The desktop environment was far more responsive than the similar-looking Redcore distro, so I was loathe to give up on it too soon. I browsed around the live system looking for any sort of hint as to how to install. There was nothing. 
+#### 2. Ensure partitions are created correctly 
 
-Searching through every page of the project home site, I noticed that not only the wiki section but also the discussion forum and issues sections are unpopulated. It looks like a nearly-empty boilerplate site template. Either the site is brand new and hasn't been fleshed out yet, or no one is maintaining it. 
-
-I noticed a single reference to an external soure of information: [http://exgent.exton.net](http://exgent.exton.net).
-
-In a not-very-clear way, that article suggested running the following sequence of commands. 
+Using VMware Fusion, you didn't explicitly define the partition map for the virtual disk drive. Check what was generated to see that it comforms with requirements to install exGENT:
 
 ```shell
-emerge --sync
-emerge --oneshot portage
-emerge --ask --update --newuse --deep --with-bdeps=y @world
-emerge --depclean
-revdep-rebuild 
-```
+parted /dev/sda print
+``` 
 
-The ```emerge --sync``` command ran for about 20 minutes, spewing ```no space left on device``` and ```content ignored from this failed directory``` hundreds and hundreds of times.
-
-The ```emerge --oneshot portage``` command responded with ```!!! Your current profile is invalid``` and so forth. 
-
-Obviously there was no need to continue, but I tried the next command anyway just in case the previous messages were bogus.
-
-The ```emerge --ask``` command got ```!!! Your current profile is invalid``` etc.
-
-The ```emerge --depclean``` command got ```!!! Your current profile is invalid``` etc.
-
-The ```revdep-rebuild``` command got ```command not found```.
-
-FAIL.
-
-## exGENT Gentoo: Second attempt: FAIL
-
-Despite numerous negative experiences with overhyped "easy" Linux distros, I felt the urge to take a second look at exGENT. The instructions claim you can install to disk in 2 to 8 minutes. Naturally, I was highly, highly skeptical. I have never seen such claims come true, in regard to _any_ software. (Ultimately I spent about 12 hours trying to make it work, so I would say my skepticism was justified.)
-
-The "live" version runs in ram and is very fast, and appears to work well except that there's no way to save anything. Any work you do and any changes you make to the system go away when you shut down. It's only useful as a toy. 
-
-The only source of information about this distro is a sort of blog written by the author of exGENT. He has posted one entry for each "release" of the distro. It occurred to me the article I had followed the first time might be adding on to information he published in an earlier post; it might not constitute the full set of installation instructions. 
-
-I scrolled through the posts and found some instructions that ostensibly install exGENT on a hard drive. Following the instructions, I had some problems.
-
-![mke2fs command](images/exgent-mke2fs-command.png)
-
-![grub-install error](images/exgent-grub-install-error.png)
-
-![partition map](images/partition-map.png)
-
-I found no help online for the grub-install message, so I sent an email asking for help to the author of exGENT at info at exton.se, 28 Apr 2018 16:57, which would be 01:57 in Sweden so I didn't expect a prompt reply. 
-
-While awaiting a reply, but I re-read the documentation carefully and noticed I had made the following error: I typed ```./install-boot.sh /dev/sda4 /dev/sda1``` when I should have typed ```./install-boot.sh /dev/sda4 /dev/sda``` with the drive as the second argument, and not a partition. 
-
-But the result of correcting this was merely:
+In my case, this is what I saw:
 
 ```
-GRUB2 bootloader will not we installed in /dev/sda4 on /dev/sda
-Could not mount the destination device. Installation process aborted.
+Error: /dev/sda: unrecognized disk label 
+Model: VMware, VMware Virtual S (scsi)
+...and other information...
+``` 
+
+This means no partitions are defined on the virtual drive. I defined partitions this way:
+
+```shell
+Partition  Filesystem      Size      Description 
+/dev/sda1  (bootloader)    2 MB      BIOS boot partition
+/dev/sda2  ext2            128 MB    Boot system partition 
+/dev/sda3  (swap)          512 MB    Swap partition
+/dev/sda4  ext4            remainder Root partition
 ```
 
-There is really no help available for these problems. I was unable to find anything similar and helpful by searching general online resources. 
+Here are the commands to create those partitions using ```parted```. Note that ```(parted)``` is the prompt displayed by the parted repl; don't type ```(parted)``` when you enter the commands on your system. 
 
-I tried to chroot into the "real" environment as one normally does, even though the blog and the sample screenshot don't call for it. This only seemed to confuse the "live" system. He must have set things up differently.
+```shell 
+parted -a optimal /dev/sda 
+(parted) mklabel gpt
+(parted) unit mib
+(parted) mkpart primary 1 3
+(parted) name 1 grub
+(parted) set 1 bios_grub on
+(parted) mkpart primary 3 131 
+(parted) name 2 boot 
+(parted) set 2 boot on
+(parted) mkpart primary 131 643
+(parted) name 3 swap 
+(parted) mkpart primary 643 -1
+(parted) name 4 rootfs
+(parted) quit
+```
 
-My conclusion is the promised "2 to 8 minute install to disk" is a joke. With poorly-written documentation and no response to questions, it is not possible to use this distro. Possibly the original author can install this thing to disk in 8 minutes, because he knows exactly what to do. 
+Now when you run
 
-He did reply to me the next day, and suggested that I read the instructions carefully. He also mentioned that it is not possible to install to a partition like sda1. His instructions refer to sdb7, but my VMware VM doesn't have device /dev/sdb. That _suggests_ it is necessary to add a second virtual drive to the VMware instance, but that is not clearly stated anywhere in the instructions. 
+```shell
+parted /dev/sda print
+```
 
-I replied to his email with an offer to do a live pairing session with him so he could walk me through the process step by step, and he could see what I enter on my system. It seemed to me that would reveal whatever I'm doing wrong. I offered to write clearer instructions for his users based on that experience. 
+You should see something like this:
 
-No reply so far. 
+```
+Number  Start    End      Size      File system  Name    Flags
+ 1      1049kB   3146kB   2097kB                 grub    bios_grub
+ 2      3146kB   137MB    134MB                  boot    boot, esp
+ 3      137MB    674MB    537MB                  swap
+ 4      674MB    21.5GB   20.8GB                 rootfs
+```
 
+#### 3. Create file systems 
 
+Create file systems for the grub and boot partitions:
 
+```shell
+mkfs.ext2 /dev/sda1
+mkfs.ext2 /dev/sda2 
+```
 
+At this point, we are ready for Step 3 as documented on the [installation instructions](http://exgent.exton.net/?page_id=25) page on Exton's site. 
 
+Create the file system for the rootfs partition according to Arne's instructions:
 
+```shell 
+mke2fs -L / -I 128 -F -j -O dir_index /dev/sda4
+```
 
+#### 4. Install into the root filesystem 
 
+Continuing with Step 4 of the instructions of the [installation instructions](http://exgent.exton.net/?page_id=25). First argument is the install partition and second argument is the swap partition.
+
+```shell
+cd /root/install
+./install /dev/sda4 /dev/sda3
+```
+
+#### 5. Install grub boot loader (this part does not work)
+
+Here the procedure differs from the basic installation instructions. The following sequence of commands is from Arne's email. He suggested this _instead of_ running the ``./install_boot.sh``` script mentioned in the standard instructions. As far as I know this is not documented elsewhere.
+
+It results in ```failed to get canonical path: /dev/sda4``` on the ```grub-install``` command.
+
+```shell
+mkdir /mnt/sda4
+mount /dev/sda4 /mnt/sda4
+mount -t proc proc /mnt/sda4/proc
+mount -o bind /sys /mnt/sda4/sys
+mount --bind /dev /mnt/sda4/dev
+mount -o bind /dev/pts /mnt/sda4/dev/pts
+chroot /mnt/sda4 /bin/bash 
+grub-install /dev/sda         <======= failed to get canonical path: /dev/sda4
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+umount /mnt/sda4/proc
+umount /mnt/sda4/sys
+umount /mnt/sda4/dev/pts
+umount /mnt/sda4/dev
+umount /mnt/sda4
+```
+
+I was unable to find any useful help online. I tried a number of variations, and ended up with the following. This goes further than the original commands. On boot, a grub menu is displayed. The boot does not complete. It get ```Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)```. I was unable to find usable help for this problem. 
+
+```shell 
+mkdir /mnt
+mount /dev/sda4 /mnt
+mount -t proc proc /mnt/proc
+mount -o bind /sys /mnt/sys
+mount --bind /dev /mnt/dev
+mount -o bind /dev/pts /mnt/dev/pts
+chroot /mnt /bin/bash 
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+umount /mnt/proc
+umount /mnt/sys
+umount /mnt/dev/pts
+umount /mnt/dev
+umount /mnt
+```
+
+This was as close as I came to a bootable system. 
+
+At this point I decided I had invested enough time in the effort. Done. 
