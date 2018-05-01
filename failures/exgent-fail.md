@@ -1,4 +1,4 @@
-[top](../../README.md) =&gt; [Failures](../failures.md)
+[top](http://github.com/provision-lightweight-development-environments) =&gt; [Failures](../failures.md)
 
 ## exGENT Gentoo: FAIL
 
@@ -148,7 +148,7 @@ cd /root/install
 
 #### 5. Install grub boot loader (this part does not work)
 
-Here the procedure differs from the basic installation instructions. The following sequence of commands is from Arne's email. He suggested this _instead of_ running the ``./install_boot.sh``` script mentioned in the standard instructions. As far as I know this is not documented elsewhere.
+Here the procedure differs from the basic installation instructions. The following sequence of commands is from Arne's email. He suggested this _instead of_ running the ```./install_boot.sh``` script mentioned in the standard instructions. As far as I know this is not documented elsewhere.
 
 It results in ```failed to get canonical path: /dev/sda4``` on the ```grub-install``` command.
 
