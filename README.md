@@ -10,10 +10,10 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 ## How to build a base instance from...
 
-- [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base) - Fedora base
-- [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base) - Debian base
-- [Linux: Manjaro](http://github.com/neopragma/bootstrap-manjaro-dev-base) - Arch base
-- [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu base
+- [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base) - Fedora style
+- [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base) - Debian style
+- [Linux: Manjaro](http://github.com/neopragma/bootstrap-manjaro-dev-base) - Arch style
+- [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu style
 - Linux: Raspberry Pi: Raspbian Jessie (TBD)
 
 ## Why the different options?
