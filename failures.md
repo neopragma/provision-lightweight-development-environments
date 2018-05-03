@@ -18,6 +18,7 @@ Many people have put together distros along the lines of category [3] and [4]. T
 - [Argent Linux](failures/argent-fail.md) [?]
 - [CoreOS Container Linux](failures/coreos-fail.md) [3]
 - [exGENT Linux](failures/exgent-fail.md) [5]
+- [Funtoo Linux](failures/funtoo-fail.md) [2]
 - [Gentoo Linux](failures/gentoo-fail.md) [2]
 - [Mabox Linux](failures/mabox-fail.md) [3]
 - [Redcore Linux](failures/redcore-fail.md) [5]
