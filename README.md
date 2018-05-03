@@ -62,7 +62,15 @@ The use case here is to set up a low-footprint OS instance suitable for software
 
 My experience with attempting to set this up various ways leads me to recommend starting with category [4]: _a ready-to-run iso with no desktop and add packages to it_. 
 
+## Failed attempts
+
 I tried several Linux distros and had mixed results. Some "failure stories" are documented here: [Failures](failures.md). 
+
+Reminiscent of [Goldilocks and the Three Bears](http://www.dltk-teach.com/rhymes/goldilocks_story.htm), my conclusions about choosing a Linux distro for this purpose are:
+
+- Building from source (category [1]) and distros and "spins" based on Gentoo or Arch (category [2]) are not suitable for this use case because of the time required to run builds and install packages. Most of the pre-built "live" examples based on Arch and Gentoo are fragile; they don't boot consistently and they are difficult to provision with additional packages. People have created "works-on-my-machine" builds that you probably will be unable to customize. Arch and Gentoo distros also seem to be problematic for installing Chef, which I like to use for provisioning beyond the basic configuration. I did not investigate this, as the build time issue was sufficient reason to move on.
+- Distros and "spins" in category [5] (out-of-the-box system with a rich desktop environment installed) are not suitable for this use case because slimming them down to a small-footprint configuration is a poor use of your time; start with a more basic system instead. Also consider you will end up with packages installed that you don't need, and that you may not even know are present; these provide a threat surface for security exploits.
+- Distros and "spins" that provide a bootable system out-of-the-box and that install packages in binary form rather than building from source offer reasonable "time-to-usable" and habitability. These are Debian/Ubuntu and Fedora/CentOS distros.
 
 ## Roads not taken
 
