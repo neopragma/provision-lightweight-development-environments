@@ -1,0 +1,15 @@
+[top](http://github.com/neopragma/provision-lightweight-development-environments)
+
+# The backstory
+
+This exercise came about when I asked myself whether we really "need" a hefty system loaded to the gills with various IDEs. Taking stock of the laptop I was working with at the time, I noted 25 IDEs and IDE-wanna-be editors were installed. There were mainstream ones like IntelliJ IDEA and Eclipse, lighter-weight ones like VSCode, specialized ones like Arduino Studio and Eiffel Studio, and "smart" editors like Atom and Sublime Text 3. 
+
+Like the proverbial [frog in hot water](https://en.wikipedia.org/wiki/Boiling_frog) (and it _is_ proverbial, as a real frog would never put up with it), we've gradually become habituated to working with IDEs. Over the years, features have been added to IDEs to try and make them a one-stop shop for every task a developer might need to perform in the course of a day's work. As a consequence, these products have become steadily more difficult to configure and more susceptible to subtle failure modes. The relative proportion of our time we must spend fiddling with our IDEs has grown, to the detriment of the time available to do real work. Entire generations of developers have entered the workforce with no idea how to make anything run _except_ inside their favorite IDE. 
+
+One day I said to myself, "Hey, wait a minute, self! You have to configure some of the same settings at the OS level _and_ in the IDE. You're running a server _inside_ the IDE, and it hangs and gets confused frequently. When you run a build _inside_ the IDE it behaves differently than when you run the same build on the command line. The IDE wraps _some_ common commands but not others, and configuring it to run additional ones is a hassle. Sure, there are keyboard shortcuts, but often the number of keys you have to press is greater than if you shelled out to a command line and just typed the command. You're looking at a bunch of panels inside a single window; is that really a better (or even meaningfully _different_) user experience than looking at a bunch of windows on a monitor? The fact you configure the IDE to hide most of those panels, disable editor tabs, and work in distraction-free mode suggests you don't really need all those features most of the time anyway." 
+
+And then I asked myself, "Hey, self: What would the _opposite_ sort of development environment look like, and how would the work flow _feel_ in comparison to today's typical IDE-dependent work flow? What would a _real_ frog do, finding itself in the gradually-heating water of IDE-land?"
+
+The follow-on question: If that is practical, then what would it take to enable a painless, quick, "no-brainer" sort of setup procedure to spin up such an environment and tailor it to different development needs?
+
+So, here we are.
