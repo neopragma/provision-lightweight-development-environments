@@ -15,6 +15,7 @@ A _base_ instance provides a template for provisioning environments tailored for
 - [Linux: Manjaro](http://github.com/neopragma/bootstrap-manjaro-dev-base) - Arch style
 - [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu style
 - Linux: Raspberry Pi: Raspbian Jessie (TBD)
+- [Unix: TrueOS Desktop](http://github.com/neopragma/bootstrap-trueos-freebsd-dev-base) - FreeBSD style
 
 For most purposes, the instance will be usable as a 512 MB VM, and can be containerized or loaded onto a small computer such as a Raspberry Pi. The instance can run with any [hypervisor](hypervisor.md).
 
