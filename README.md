@@ -10,14 +10,19 @@ A _base_ instance provides a template for provisioning environments tailored for
 
 ## How to build a base instance from...
 
+### Software (VM)
+
 - [Linux: CentOS 7](http://github.com/neopragma/bootstrap-centos-7-dev-base) - Fedora style
 - [Linux: Debian 9](http://github.com/neopragma/bootstrap-debian-9-dev-base) - Debian style
 - [Linux: Manjaro](http://github.com/neopragma/bootstrap-manjaro-dev-base) - Arch style
 - [Linux: Ubuntu 16.04 LTS](http://github.com/neopragma/bootstrap-ubuntu-server-16.04-dev-base) - Ubuntu style
-- Linux: Raspberry Pi: Raspbian Jessie (TBD)
 - [Unix: TrueOS Desktop](http://github.com/neopragma/bootstrap-trueos-freebsd-dev-base) - FreeBSD style
 
 For most purposes, the instance will be usable as a 512 MB VM, and can be containerized or loaded onto a small computer such as a Raspberry Pi. The instance can run with any [hypervisor](hypervisor.md).
+
+### Hardware
+
+- [Linux: Raspberry Pi: Raspbian Jessie](http://github.com/neopragma/bootstrap-raspbian-jessie-dev-base)
 
 ## Why the different options?
 
